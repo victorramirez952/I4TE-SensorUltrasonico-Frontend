@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState, useEffect, Fragment } from 'react';
 import ModalDelete from './modalDelete';
 import ModalDeleteAll from './modalDeleteAll';
