@@ -1,5 +1,7 @@
 // MyComponent.js
 import React from 'react';
+import Image from 'next/image'
+import sensorImage from './Images/SensorUltrasonico.png'
 
 function HeroImage() {
     const URI_IMAGE = "https://http2.mlstatic.com/D_NQ_NP_2X_661490-MLM44351736298_122020-F.webp"
@@ -14,7 +16,8 @@ function HeroImage() {
                 </p>
             </div>
             <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <img src={URI_IMAGE} alt="SensorUltrasonico.jpg" />
+                <Image src={sensorImage} alt="Sensor Ultrasonico" width={500} height={500} />
+                {/* <img src={URI_IMAGE} alt="SensorUltrasonico.jpg" /> */}
             </div>                
         </div>
     </section>
