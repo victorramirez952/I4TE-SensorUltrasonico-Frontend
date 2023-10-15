@@ -6,51 +6,59 @@ import HeroImage from './heroImage';
 import Head from "next/head";
 
 
+
 export default function Home() {
-    const [distances, setDistances] = useState([]);
-    const [idDeleting, setIdDeleting] = useState([]);
-    const [nElements, setNElements] = useState(0);
-    const [deletingAll, setDeletingAll] = useState(false);
-    const [modalDeletingVisible, setModalDeletingVisible] = useState(false);
+    // const [distances, setDistances] = useState([]);
+    // const [idDeleting, setIdDeleting] = useState([]);
+    // const [nElements, setNElements] = useState(0);
+    // const [deletingAll, setDeletingAll] = useState(false);
+    // const [modalDeletingVisible, setModalDeletingVisible] = useState(false);
+
+    //   useEffect(() => {
+    //     // Handle unhandled promise rejections
+    //     process.on('unhandledRejection', (reason, promise) => {
+    //     console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    //     // Optionally, you can log or handle the rejection here
+    //     });
+    // }, []);
     
-    useEffect(() => {
-        // Fetch the documents from the API when the component mounts
-        fetchDistances();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
+    // useEffect(() => {
+    //     // Fetch the documents from the API when the component mounts
+    //     fetchDistances();
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    //   }, []);
     
-    // Function to toggle the modal visibility
-    const toggleModalDeleting = () => {
-        setModalDeletingVisible(!modalDeletingVisible);
-    };
+    // // Function to toggle the modal visibility
+    // const toggleModalDeleting = () => {
+    //     setModalDeletingVisible(!modalDeletingVisible);
+    // };
 
-    // Function to toggle the modal visibility
-    const toggleModalDeletingAll = () => {
-        setDeletingAll(!deletingAll);
-    };
+    // // Function to toggle the modal visibility
+    // const toggleModalDeletingAll = () => {
+    //     setDeletingAll(!deletingAll);
+    // };
 
-    const fetchDistances = async () => {
-    try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_EXTERNAL_HOST}/getDistances`);
-        const data = await response.json();
-        if(data.message == "Data found"){
-            setDistances(data.distances);
-            setNElements(distances.length)
-        } else {
-            setNElements(0)
-            setDistances({})
-        }
-        console.log(data);
-    } catch (error) {
-        console.error('Error fetching distances:', error);
-    }
-    };
+    // const fetchDistances = async () => {
+    // try {
+    //     const response = await fetch(`${process.env.NEXT_PUBLIC_EXTERNAL_HOST}/getDistances`);
+    //     const data = await response.json();
+    //     if(data.message == "Data found"){
+    //         setDistances(data.distances);
+    //         setNElements(distances.length)
+    //     } else {
+    //         setNElements(0)
+    //         setDistances({})
+    //     }
+    // } catch (error) {
+    //     console.error('Error fetching distances:', error);
+    // }
+    // };
 
-    // Function to toggle the modal visibility
-    const openModalDeleting = (_idP) => {
-        setIdDeleting(_idP)
-        toggleModalDeleting()
-    };
+    // // Function to toggle the modal visibility
+    // const openModalDeleting = (_idP) => {
+    //     setIdDeleting(_idP)
+    //     toggleModalDeleting()
+    // };
 
   return (
     <Fragment>
@@ -64,7 +72,8 @@ export default function Home() {
             <meta name="theme-color" content="#ffffff"/>
         </Head>
         <main className="flex min-h-screen flex-col items-center p-8">
-            <HeroImage/>
+            <h1>Hello world</h1>
+            {/* <HeroImage/>
             {modalDeletingVisible && <ModalDelete toggleModalDeleting={toggleModalDeleting} idDeleting={idDeleting} fetchDistances={fetchDistances}/>}
             {deletingAll && (distances.length > 0) && <ModalDeleteAll toggleModalDeletingAll={toggleModalDeletingAll} fetchDistances={fetchDistances} nElements={nElements}/>}
         <h1 className="m-8">Sensor Ultrasónico</h1>
@@ -112,7 +121,7 @@ export default function Home() {
                     })}
                 </tbody>
             </table>
-        </div>
+        </div> */}
         </main>
     </Fragment>
   )
