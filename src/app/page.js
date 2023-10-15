@@ -71,13 +71,12 @@ export default function Home() {
             <meta name="msapplication-TileColor" content="#da532c"/>
             <meta name="theme-color" content="#ffffff"/>
         </Head>
-        <main className="flex min-h-screen flex-col items-center p-8">
-            <h1>Hello world</h1>
+        <main className="flex min-h-screen flex-col items-center p-0 sm:p-8">
             <HeroImage/>
             {modalDeletingVisible && <ModalDelete toggleModalDeleting={toggleModalDeleting} idDeleting={idDeleting} fetchDistances={fetchDistances}/>}
             {deletingAll && (distances.length > 0) && <ModalDeleteAll toggleModalDeletingAll={toggleModalDeletingAll} fetchDistances={fetchDistances} nElements={nElements}/>}
         <h1 className="m-8">Sensor Ultrasónico</h1>
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div className="max-w-full flex flex-col items-start sm:relative overflow-x-auto shadow-md sm:rounded-lg">
             <button type="button" className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 justify-self-end" onClick={toggleModalDeletingAll}>Borrar todo</button>
             <table className="w-full text-sm text-center text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
